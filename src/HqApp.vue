@@ -13,8 +13,8 @@
 <script>
 
       //导入组件
-      import vTitle from './HqTitle.vue';
-      import vButton from './HqButton.vue';
+      import vTitle from './components/HqTitle.vue';
+      import vButton from './components/HqButton.vue';
       export default {
           name: "HqApp",
           data:function() {
