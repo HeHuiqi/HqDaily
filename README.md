@@ -1,3 +1,19 @@
+## 运行说明
+
+* 开启代理服务器
+```
+cd HqDaily/src
+node proxy.js
+```
+* 运行本项目
+```
+cd HqDaily
+npm install
+npm run dev
+
+```
+注意知乎日报api会发生变化，请自行抓包查看
+
 ### package.json 说明
 
 ```

@@ -60,9 +60,14 @@
         },
         methods:{
             getThemes(){
+                console.log('获取主题');
+
                 //axios 发起get请求
                 $.ajax.get('themes').then(res => {
                     this.themes = res.others;
+                    this.showThemes = true;
+                    console.log('获取主题返回');
+
 
                 })
 
@@ -76,9 +81,17 @@
                 });
             },
             getRecommendList(){
+                console.log('获取最新消息');
+
                 this.isLoading = true;
                 const  prevDay = $.prevDay(this.dailyTime+86400000);
-                $.ajax.get('news/before/'+prevDay).then(res => {
+                console.log('prevDay--'+prevDay);
+                console.log('this.dailyTime--'+this.dailyTime);
+                //最新
+                var uri = '/news/latest';
+                //获取前一天无效了
+                // uri = 'news/before/'+prevDay;
+                $.ajax.get(uri).then(res => {
                     // console.log(JSON.stringify(res));
                     this.recommendList.push(res);
                     this.isLoading = false;

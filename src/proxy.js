@@ -6,10 +6,10 @@ const host = '127.0.0.1';
 const port = 9000;
 const imgPort = 8999;
 
-//API代理
-
+//API代理开启一个代理服务器，本地项目所有的请求都走这个代理服务器，由代理服务器去获得想要的数据
+const  zhihu_api = 'https://news-at.zhihu.com/api/4';
 const apiServer = http.createServer((req,res) => {
-    const url = 'http://news-at.zhihu.com/api/4'+req.url;
+    const url = zhihu_api+req.url;
     const options = {
         url:url,
     };
@@ -26,7 +26,7 @@ const apiServer = http.createServer((req,res) => {
             res.end(body);
         }
     }
-
+    //由node request 模块去发起请求，解决跨域的问题
     request.get(options,callback);
 });
 
@@ -54,6 +54,7 @@ const imgServer = http.createServer( (req,res) =>{
             res.end(body);
         }
     }
+    //由node request 模块去发起请求，解决跨域的问题
     request.get(options,callback);
 });
 
