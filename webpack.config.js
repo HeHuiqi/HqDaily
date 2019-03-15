@@ -64,7 +64,7 @@ var config = {
                 exclude:/node_modules/
             },
             /*
-            当遇到♂f、 .png、.忧f等格式文件时， url-loader会把它们一起编译到 dist 目录下，
+            当遇到.woff、 .png、.tff等格式文件时， url-loader会把它们一起编译到 dist 目录下，
             “limit=1024” 是指如果这个文件小于 lkb，就以 base64 的形式加载，不会生成一个文件。
             * */
             //path.posix.join(assetsSubDirectory, _path)
